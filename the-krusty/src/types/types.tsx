@@ -4,18 +4,13 @@ interface MenuItems {
 }
 
 export interface CartItem {
+	itemName: string;
 	quantity: number;
 	price: number;
 }
 
 export interface CartState {
-	cartItems: Map<string, CartItem>;
+	cartItems: CartItem[];
 	addedToCart: boolean;
 	itemName: string;
 }
-
-// initialState: {
-//     cartItems: new Map(),
-//     itemName: '',
-//     addedToCart: false,
-// },

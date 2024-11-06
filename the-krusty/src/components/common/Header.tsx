@@ -23,9 +23,9 @@ import CartLink from '../link/CartLink';
 export default function Header() {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-	useEffect(() => {
-		console.log('네비게이션 ==> ', Data);
-	}, []);
+	// useEffect(() => {
+	// 	console.log('네비게이션 ==> ', Data);
+	// }, []);
 	return (
 		<header className={styles.header}>
 			<Image priority={true} src={Light} alt="" className={styles.light} />

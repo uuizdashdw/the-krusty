@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CartItem, CartState } from '@/types/types';
 
 const initialCartState: CartState = {
-	cartItems: new Map(),
+	cartItems: [],
 	addedToCart: false,
 	itemName: '',
 };
@@ -13,7 +13,7 @@ const cartSlice = createSlice({
 	name: 'cart',
 	initialState: initialCartState,
 	reducers: {
-		setCartItems(state, action: PayloadAction<Map<string, CartItem>>) {
+		setCartItems(state, action: PayloadAction<CartItem[]>) {
 			state.cartItems = action.payload;
 		},
 
@@ -30,13 +30,19 @@ const cartSlice = createSlice({
 			action: PayloadAction<{ itemName: string; itemPrice: number }>,
 		) {
 			const { itemName, itemPrice } = action.payload;
-			const currentItem = state.cartItems.get(itemName);
-			const newQuantity = currentItem ? currentItem.quantity + 1 : 1;
+			const currentItem = state.cartItems.find(
+				item => item.itemName === itemName,
+			);
 
-			state.cartItems.set(itemName, {
-				quantity: newQuantity,
-				price: itemPrice,
-			});
+			if (currentItem) {
+				currentItem.quantity += 1;
+			} else {
+				state.cartItems.push({
+					itemName,
+					quantity: 1,
+					price: itemPrice,
+				});
+			}
 		},
 	},
 });

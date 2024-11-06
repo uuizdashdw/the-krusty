@@ -10,6 +10,10 @@ import { Provider } from 'react-redux';
 // Store
 import store from '@/store/store';
 
+import { enableMapSet } from 'immer';
+
+enableMapSet();
+
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<Provider store={store}>

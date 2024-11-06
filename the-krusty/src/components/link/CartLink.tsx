@@ -11,9 +11,25 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Cart from '../../../public/images/cart.svg';
 
+// Redux
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
+
 export default function CartLink() {
 	const [numItemInCart, setNumItemsInCart] = useState(0);
 	const [newItemAdded, setNewItemAdded] = useState(false);
+	const { cartItems } = useSelector((state: RootState) => state.cart);
+
+	// 카트에 담긴 아이템 수 계산
+	useEffect(() => {
+		let sum = 0;
+
+		cartItems.forEach(value => {
+			sum += value.quantity;
+		});
+
+		setNumItemsInCart(sum);
+	}, [cartItems]);
 
 	// 새로운 아이템 추가 or 제거 될때 카트 위 버블 애니메이션 효과 주기
 	useEffect(() => {
