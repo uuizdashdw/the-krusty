@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "link": "/",
+        "title": "Home"
+    },
+    {
+        "id": 1,
+        "link": "/#menu",
+        "title": "Menu"
+    },
+    {
+        "id": 2,
+        "link": "/#location",
+        "title": "Location"
+    },
+    {
+        "id": 3,
+        "link": "/team",
+        "title": "Our Crew"
+    },
+    {
+        "id": 4,
+        "link": "/cart",
+        "title": "Cart"
+    }
+]

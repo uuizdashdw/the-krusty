@@ -10,14 +10,29 @@ interface AddToCartBtnType {
 	price: number;
 }
 
+// Redux
+import { useSelector } from 'react-redux';
+
+// Hook
+import { useAddToCart } from '@/hooks/useAddToCart';
+import { RootState } from '@/store/store';
+
 export default function AddToCartBtn({
 	children,
 	btnClass,
 	name,
 	price,
 }: AddToCartBtnType) {
+	const { addedToCart } = useSelector((state: RootState) => state.cart);
+	const { handleAddToCart } = useAddToCart();
 	return (
-		<button className={btnClass} name={name} data-price={price}>
+		<button
+			className={btnClass}
+			data-name={name}
+			data-price={price}
+			onClick={handleAddToCart}
+			disabled={addedToCart ? true : false}
+		>
 			{children}
 		</button>
 	);

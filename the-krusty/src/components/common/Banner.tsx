@@ -13,7 +13,7 @@ import AddToCartBtn from '../button/AddToCartBtn';
 
 export default function Banner() {
 	return (
-		<section className={styles.banner}>
+		<section className={styles.banner} id="skip-target">
 			<Image src={Flower1} alt="" className={styles.flower1} priority={true} />
 			<Image className={styles.flower2} src={Flower2} alt="" />
 			<Image className={styles.flower3} src={Flower3} alt="" />
@@ -21,16 +21,21 @@ export default function Banner() {
 				<Image
 					src={KrabbyPatty}
 					alt="게살버거"
-					className={styles.KrabbyPattyImg}
+					className={styles.krabbyPattyImg}
 					priority={true}
 				/>
 				<h1>
+					Home of the world famous{' '}
 					<span className={styles.headingText}>
 						<span className="sr-only">집게리아</span>
 					</span>
 				</h1>
 
-				<p>드디어 게살버거 육지에 상륙!</p>
+				<p style={{ fontWeight: 'bold' }}>
+					드디어 비밀스러운 게살버거를 맛볼 기회 ! <br />
+					지금 이 기회를 놓치지 마세요 !
+				</p>
+
 				<AddToCartBtn
 					btnClass="primary-button"
 					name="Krabby Patty"
