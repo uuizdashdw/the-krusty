@@ -6,7 +6,6 @@ export function useHandlePlural() {
 	const { itemName, cartItems } = useSelector((state: RootState) => state.cart);
 	const currentItem = cartItems.find(item => item.itemName === itemName);
 	const numItems = currentItem?.quantity || 0;
-	console.log('### NUM ITEMS?? => ', numItems);
 
 	const itemNameHandlePlural = () => {
 		if (numItems && numItems > 1) {

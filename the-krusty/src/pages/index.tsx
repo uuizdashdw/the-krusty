@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css';
 // Components
 import Banner from '@/components/common/Banner';
 import CallToAction from '@/components/callToAction/CallToAction';
+import Menu from '@/components/menu/Menu';
 
 export default function Home() {
 	return (
@@ -20,6 +21,7 @@ export default function Home() {
 			<>
 				<Banner />
 				<CallToAction />
+				<Menu />
 			</>
 		</>
 	);
