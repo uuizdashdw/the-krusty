@@ -6,12 +6,10 @@ import Image from 'next/image';
 import Krabs from '../../../public/images/krabs.jpg';
 import SpongeBob from '../../../public/images/spongebob.png';
 import Squidward from '../../../public/images/squidward.jpg';
+import MetaData from '@/components/meta/MetaData';
 
 // Layout
 import SubLayout from '@/components/layout/SubLayout';
-
-// Head
-import Head from 'next/head';
 
 // Type
 import { ReactNode } from 'react';
@@ -19,22 +17,12 @@ import { ReactNode } from 'react';
 export default function TeamPage() {
 	return (
 		<>
-			<Head>
-				<title>집게리아 | Our Crew</title>
-				<meta
-					name="description"
-					content="게살버거의 집, 집게리아에 오신 것을 환영합니다!"
-				/>
-				<meta
-					property="og:title"
-					content="게살버거의 집, 집게리아에 오신 것을 환영합니다!"
-				/>
-				<meta
-					property="og:description"
-					content="게살버거의 집, 집게리아에 오신 것을 환영합니다!"
-				/>
-				<meta property="og:imgae" content="/share.jpg" />
-			</Head>
+			<MetaData
+				title="집게리아 | Our Crew"
+				description="게살버거의 집, 집게리아에 오신 것을 환영합니다!"
+				imageUrl="/share.jpg"
+			/>
+
 			<section className={styles.teamContainer}>
 				<h1 className="display-text">Our Crew</h1>
 
