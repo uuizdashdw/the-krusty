@@ -16,18 +16,28 @@ export default function Bubbles() {
 		setWindowHeight(innerHeight);
 	}, []);
 
-	const Images = new Array(4);
+	const Images = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+
 	return (
 		<div className={styles.bubbles}>
-			{Images.map((_, index) => (
+			{Images.map(item => (
 				<Image
 					src={Bubble}
 					alt="bubble"
-					key={index}
-					className={`styles.bubble${index + 1}`}
+					key={item.id}
+					className={`${styles[`bubble${item.id}`]}`}
 					style={{ transform: `translateY(-${windowHeight}px) translateX(0)` }}
 				/>
 			))}
+			{/* {Images.map((_, index)) => (
+				<Image
+					src={Bubble}
+					alt="bubble"
+					key={}
+					// className={`${styles.bubble}` `${item.}`}
+					style={{ transform: `translateY(-${windowHeight}px) translateX(0)` }}
+				/>
+			))} */}
 		</div>
 	);
 }
