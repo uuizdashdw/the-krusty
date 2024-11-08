@@ -73,7 +73,7 @@ export default function Employee() {
 					<Image src={EmployeeOfMonthPic} alt="" />
 				</motion.div>
 
-				<figcaption>SpongeBob SquarePants</figcaption>
+				<figcaption>네모바지 스폰지밥</figcaption>
 			</figure>
 			<svg
 				className={styles.wavesBottom}

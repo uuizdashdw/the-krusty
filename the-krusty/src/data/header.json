@@ -6,12 +6,12 @@
     },
     {
         "id": 1,
-        "link": "/#menu",
+        "link": "/menu",
         "title": "Menu"
     },
     {
         "id": 2,
-        "link": "/#location",
+        "link": "/location",
         "title": "Location"
     },
     {

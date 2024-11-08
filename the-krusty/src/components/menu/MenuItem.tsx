@@ -17,6 +17,12 @@ export default function MenuItem({ item }: { item: any }) {
 					aria-hidden="true"
 				></motion.span>
 				<span aria-hidden="true">{item.price}</span>
+				<span
+					style={{ fontSize: '22px', marginLeft: '4px', fontWeight: 'bold' }}
+				>
+					{' '}
+					₩
+				</span>
 			</AddToCartBtn>
 		</li>
 	);

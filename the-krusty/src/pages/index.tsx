@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import localFont from 'next/font/local';
-import styles from '@/styles/Home.module.css';
 
 // Components
 import Banner from '@/components/common/Banner';
 import CallToAction from '@/components/callToAction/CallToAction';
 import Menu from '@/components/menu/Menu';
 import Employee from '@/components/employee/Employee';
+import Layout from '@/components/layout/Layout';
+import { ReactNode } from 'react';
 
 export default function Home() {
 	return (
@@ -28,3 +27,7 @@ export default function Home() {
 		</>
 	);
 }
+
+Home.getLayout = function getLayout(page: ReactNode) {
+	return <Layout>{page}</Layout>;
+};

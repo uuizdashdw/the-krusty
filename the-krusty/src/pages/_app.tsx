@@ -11,15 +11,17 @@ import { Provider } from 'react-redux';
 import store from '@/store/store';
 
 import { enableMapSet } from 'immer';
+import { ReactNode } from 'react';
+import { NextPageWithLayout } from '@/types/next';
 
 enableMapSet();
 
 export default function App({ Component, pageProps }: AppProps) {
+	const getLayout =
+		(Component as NextPageWithLayout).getLayout || ((page: ReactNode) => page);
 	return (
 		<Provider store={store}>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<>{getLayout(<Component {...pageProps} />)}</>
 		</Provider>
 	);
 }
