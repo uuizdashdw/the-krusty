@@ -7,6 +7,7 @@ import styles from '@/styles/Home.module.css';
 import Banner from '@/components/common/Banner';
 import CallToAction from '@/components/callToAction/CallToAction';
 import Menu from '@/components/menu/Menu';
+import Employee from '@/components/employee/Employee';
 
 export default function Home() {
 	return (
@@ -22,6 +23,7 @@ export default function Home() {
 				<Banner />
 				<CallToAction />
 				<Menu />
+				<Employee />
 			</>
 		</>
 	);
