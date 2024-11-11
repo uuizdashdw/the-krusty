@@ -7,7 +7,12 @@ import { motion } from 'framer-motion';
 // Component
 import AddToCartBtn from '../button/AddToCartBtn';
 
-export default function MenuItem({ item }: { item: any }) {
+interface MenuItemType {
+	name: string;
+	price: number;
+}
+
+export default function MenuItem({ item }: { item: MenuItemType }) {
 	return (
 		<li className={styles.menuItem}>
 			<AddToCartBtn btnClass="" name={item.name} price={item.price}>
@@ -16,7 +21,7 @@ export default function MenuItem({ item }: { item: any }) {
 					className={styles.dotLeaders}
 					aria-hidden="true"
 				></motion.span>
-				<span aria-hidden="true">{item.price}</span>
+				<span aria-hidden="true">{item.price.toLocaleString()}</span>
 				<span
 					style={{ fontSize: '22px', marginLeft: '4px', fontWeight: 'bold' }}
 				>

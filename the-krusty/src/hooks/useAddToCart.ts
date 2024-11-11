@@ -5,10 +5,13 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart, setAddedToCart, setItemName } from '@/store/cartSlice';
 import { RootState } from '@/store/store';
+import { CartItem } from '@/types/types';
 
 export function useAddToCart() {
 	const dispatch = useDispatch();
-	const { addedToCart } = useSelector((state: RootState) => state.cart);
+	const { addedToCart, cartItems } = useSelector(
+		(state: RootState) => state.cart,
+	);
 
 	useEffect(() => {
 		if (addedToCart) {
@@ -27,12 +30,15 @@ export function useAddToCart() {
 		const currentItemPrice = parseFloat(
 			e.currentTarget.getAttribute('data-price') as string,
 		);
-
-		dispatch(setItemName(currentItemName));
+		// const currentQuantity = cartItems.find(
+		// 	item => item.itemName === currentItemName,
+		// )?.quantity as number;
+		const currentQuantity = dispatch(setItemName(currentItemName));
 		dispatch(
 			addItemToCart({
 				itemName: currentItemName,
-				itemPrice: currentItemPrice,
+				price: currentItemPrice,
+				quantity: 1,
 			}),
 		);
 		dispatch(setAddedToCart(true));

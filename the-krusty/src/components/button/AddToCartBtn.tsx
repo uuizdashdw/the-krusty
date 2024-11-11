@@ -30,7 +30,7 @@ export default function AddToCartBtn({
 			className={btnClass}
 			data-name={name}
 			data-price={price}
-			onClick={handleAddToCart}
+			onClick={e => handleAddToCart(e)}
 			disabled={addedToCart ? true : false}
 		>
 			{children}

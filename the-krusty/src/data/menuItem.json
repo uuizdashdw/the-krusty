@@ -1,58 +1,58 @@
 [
     {
         "name": "Krabby Patty",
-        "price": "3,000"
+        "price": 3000
     },
     {
         "name": "Double Krabby Patty",
-        "price": "4,000"
+        "price": 4000
     },
     {
         "name": "Tripple Krabby Patty",
-        "price": "5,000"
+        "price": 5000
     },
     {
         "name": "Krabby Meal",
-        "price": "5,500"
+        "price": 5500
     },
     {
         "name": "Double Krabby Meal",
-        "price": "6,500"
+        "price": 6500
     },
     {
         "name": "Triple Krabby Meal",
-        "price": "7,500"
+        "price": 7500
     },
     {
         "name": "Salty Sea Dog",
-        "price": "3,000"
+        "price": 3000
     },
     {
         "name": "Footlong",
-        "price": "4,000"
+        "price": 4000
     },
     {
         "name": "Sailors Surprise",
-        "price": "5,000"
+        "price": 5000
     },
     {
         "name": "Golden Loaf",
-        "price": "4,000"
+        "price": 4000
     },
     {
         "name": "Coral Bits",
-        "price": "2,000"
+        "price": 2000
     },
     {
         "name": "Kelp Rings",
-        "price": "2,000"
+        "price": 2000
     },
     {
         "name": "Seafoam Soda",
-        "price": "2,000"
+        "price": 2000
     },
     {
         "name": "Kelp Shake",
-        "price": "4,000"
+        "price": 4000
     }
 ]
