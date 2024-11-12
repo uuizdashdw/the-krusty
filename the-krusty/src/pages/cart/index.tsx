@@ -30,9 +30,12 @@ export default function CartPage() {
 
 	return (
 		<>
-			{/* <Head>
-				<MetaData title='' />
-			</Head> */}
+			<MetaData
+				title="집게리아 | 장바구니"
+				description="드디어 공개된 집게리아의 비밀!"
+				imageUrl="/share.jpg"
+			/>
+
 			<section className={styles.container}>
 				<div className={styles.cart}>
 					<h1 className="display-text">Cart</h1>
