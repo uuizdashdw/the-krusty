@@ -1,5 +1,5 @@
 // CSS
-import styles from './bubbles.module.css';
+import { BubbleContainer } from '@/styles/bubble/BubbleContainer';
 
 // Images
 import Image from 'next/image';
@@ -19,25 +19,16 @@ export default function Bubbles() {
 	const Images = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 	return (
-		<div className={styles.bubbles}>
+		<BubbleContainer>
 			{Images.map(item => (
 				<Image
 					src={Bubble}
 					alt="bubble"
 					key={item.id}
-					className={`${styles[`bubble${item.id}`]}`}
+					className={`bubble${item.id}`}
 					style={{ transform: `translateY(-${windowHeight}px) translateX(0)` }}
 				/>
 			))}
-			{/* {Images.map((_, index)) => (
-				<Image
-					src={Bubble}
-					alt="bubble"
-					key={}
-					// className={`${styles.bubble}` `${item.}`}
-					style={{ transform: `translateY(-${windowHeight}px) translateX(0)` }}
-				/>
-			))} */}
-		</div>
+		</BubbleContainer>
 	);
 }

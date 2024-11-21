@@ -1,5 +1,6 @@
-// CSS
-import styles from './index.module.css';
+// Style
+import { TeamContainer } from '@/styles/team/TeamContainer';
+// import styles from './index.module.css';
 
 // Images
 import Image from 'next/image';
@@ -23,10 +24,10 @@ export default function TeamPage() {
 				imageUrl="/share.jpg"
 			/>
 
-			<section className={styles.teamContainer}>
+			<TeamContainer>
 				<h1 className="display-text">Our Crew</h1>
 
-				<div className={styles.team}>
+				<div className="team">
 					<figure>
 						<q>행복을 위한 1글자, 그것은 돈.</q>
 						<Image src={Krabs} alt="집게사장" />
@@ -43,7 +44,7 @@ export default function TeamPage() {
 						<figcaption>징징이, Cashier</figcaption>
 					</figure>
 				</div>
-			</section>
+			</TeamContainer>
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 // CSS
-import styles from './menuItem.module.css';
+// import styles from './menuItem.module.css';
+import { MenuItemContainer } from '@/styles/menu/MenuItemContainer';
 
 // Motion
 import { motion } from 'framer-motion';
@@ -14,13 +15,10 @@ interface MenuItemType {
 
 export default function MenuItem({ item }: { item: MenuItemType }) {
 	return (
-		<li className={styles.menuItem}>
+		<MenuItemContainer>
 			<AddToCartBtn btnClass="" name={item.name} price={item.price}>
 				<span aria-hidden="true">{item.name}</span>
-				<motion.span
-					className={styles.dotLeaders}
-					aria-hidden="true"
-				></motion.span>
+				<motion.span className="dotLeaders" aria-hidden="true"></motion.span>
 				<span aria-hidden="true">{item.price.toLocaleString()}</span>
 				<span
 					style={{ fontSize: '22px', marginLeft: '4px', fontWeight: 'bold' }}
@@ -29,6 +27,6 @@ export default function MenuItem({ item }: { item: MenuItemType }) {
 					₩
 				</span>
 			</AddToCartBtn>
-		</li>
+		</MenuItemContainer>
 	);
 }

@@ -1,5 +1,5 @@
 // CSS
-import styles from './index.module.css';
+import { CartContainer } from '@/styles/cart/CartContainer';
 
 // Component
 import SubLayout from '@/components/layout/SubLayout';
@@ -16,6 +16,7 @@ import { RootState } from '@/store/store';
 import { useUpdateQuantity } from '@/hooks/useUpdateQuantity';
 import Head from 'next/head';
 import MetaData from '@/components/meta/MetaData';
+import Link from 'next/link';
 
 export default function CartPage() {
 	const { cartItems } = useSelector((state: RootState) => state.cart);
@@ -36,8 +37,8 @@ export default function CartPage() {
 				imageUrl="/share.jpg"
 			/>
 
-			<section className={styles.container}>
-				<div className={styles.cart}>
+			<CartContainer>
+				<div className="cart">
 					<h1 className="display-text">Cart</h1>
 
 					<ul>
@@ -51,15 +52,18 @@ export default function CartPage() {
 						))}
 					</ul>
 
-					<div className={styles.total}>
+					<div className="total">
 						<h3>Total</h3>
-						<p className={styles.totalPrice}>
+						<p className="totalPrice">
 							{total.toLocaleString()}
-							<span className={styles.won}> ₩</span>
+							<span className="won"> ₩</span>
 						</p>
 					</div>
+					<Link href={'checkout'} className="primary-button primary-button-mt ">
+						Checkout
+					</Link>
 				</div>
-			</section>
+			</CartContainer>
 		</>
 	);
 }

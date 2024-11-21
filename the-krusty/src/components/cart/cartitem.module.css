@@ -6,7 +6,7 @@
     padding: 1rem 0;
 }
 
-.qauntity {
+.quantity {
     display: flex;
     justify-content: space-between;
     background-color: var(--primaryColor);
@@ -16,7 +16,7 @@
     padding: 0 0.25rem;
 }
 
-.qauntity button {
+.quantity button {
     padding: 0 0.75rem 4px 0.75rem;
     font-size: 1.5rem;
     line-height: 1;
@@ -24,11 +24,11 @@
     transition: all 150ms linear;
 }
 
-.qauntity button:hover {
+.quantity button:hover {
     filter: brightness(1.2);
 }
 
-.qauntity p {
+.quantity p {
     margin: 0 1rem;
     padding-bottom: 5px;
 }
@@ -36,4 +36,11 @@
 .won {
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+    .quantity {
+        margin-top: 0.5rem;
+        padding: 0.25rem;
+    }
 }

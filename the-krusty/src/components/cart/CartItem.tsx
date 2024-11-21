@@ -1,5 +1,6 @@
 // CSS
-import styles from './cartitem.module.css';
+// import styles from './cartitem.module.css';
+import { CartItemContainer } from '@/styles/cart/CartItemContainer';
 
 // Type
 interface CartItemType {
@@ -23,10 +24,10 @@ export default function CartItem({
 	const { handleUpdateQunatity } = useUpdateQuantity();
 	// const { cartItems } = useSelector((state: RootState) => state.cart);
 	return (
-		<li className={styles.cartItem}>
+		<CartItemContainer>
 			<div>
 				<h2>{itemName}</h2>
-				<div className={styles.quantity}>
+				<div className="quantity">
 					<button
 						onClick={e => handleUpdateQunatity(e)}
 						data-name={itemName}
@@ -46,8 +47,8 @@ export default function CartItem({
 			</div>
 			<p>
 				{itemPrice.toLocaleString()}
-				<span className={styles.won}> ₩</span>
+				<span className="won"> ₩</span>
 			</p>
-		</li>
+		</CartItemContainer>
 	);
 }

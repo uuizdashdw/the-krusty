@@ -24,9 +24,7 @@ export default function CallToAction() {
 			>
 				<Image src={CoralBits} alt="사이드 메뉴 잊지마세요!" />
 			</motion.div>
-
 			<h2>Don&apos;t forget a side of Coral Bits!</h2>
-
 			<AddToCartBtn btnClass="primary-button-sq" name="Coral Bits" price={2000}>
 				<Image src={AddtoCartIcon} alt="카트에 담기" />
 			</AddToCartBtn>

@@ -1,5 +1,10 @@
 // CSS
-import styles from './menu.module.css';
+import {
+	MenuContainer,
+	MenuItemsWrapper,
+	MenuItems,
+	MenuItemsColumns,
+} from '@/styles/menu/MenuContainer';
 
 // Data
 import menuItems from '../../data/menuItem.json';
@@ -32,13 +37,13 @@ export default function Menu() {
 		},
 	};
 	return (
-		<section className={styles.menuContainer}>
+		<MenuContainer>
 			<motion.h1 className="display-text">Galley Grub</motion.h1>
 			<h2>클릭하여 장바구니에 담기</h2>
 
-			<div className={styles.menu}>
-				<motion.ul
-					className={`${styles.menuItems} ${styles.columns}`}
+			<MenuItemsWrapper>
+				<MenuItemsColumns
+					// className={`${styles.menuItems} ${styles.columns}`}
 					variants={raiseIntoView}
 					initial="initial"
 					whileInView="whileInView"
@@ -47,10 +52,10 @@ export default function Menu() {
 					{menuItems.slice(0, 10).map((item, index) => (
 						<MenuItem key={index} item={item} />
 					))}
-				</motion.ul>
+				</MenuItemsColumns>
 
-				<motion.ul
-					className={styles.menuItems}
+				<MenuItems
+					// className={styles.menuItems}
 					variants={raiseIntoView}
 					initial="initial"
 					whileInView="whileInView"
@@ -59,10 +64,10 @@ export default function Menu() {
 					{menuItems.slice(10, 12).map((item, index) => (
 						<MenuItem key={index} item={item} />
 					))}
-				</motion.ul>
+				</MenuItems>
 
-				<motion.ul
-					className={styles.menuItems}
+				<MenuItems
+					// className={styles.menuItems}
 					variants={raiseIntoView}
 					initial="initial"
 					whileInView="whileInView"
@@ -71,8 +76,8 @@ export default function Menu() {
 					{menuItems.slice(12, 14).map((item, index) => (
 						<MenuItem key={index} item={item} />
 					))}
-				</motion.ul>
-			</div>
-		</section>
+				</MenuItems>
+			</MenuItemsWrapper>
+		</MenuContainer>
 	);
 }

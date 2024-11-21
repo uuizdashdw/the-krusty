@@ -1,5 +1,5 @@
 // CSS
-import styles from './hamburgerbtn.module.css';
+import { HamburgerBtnContainer } from '@/styles/button/HamburgerBtnContainer';
 
 // Type
 interface HamburgerBtnType {
@@ -15,19 +15,15 @@ export default function HamburgerBtn({
 		setMenuOpen((prev: boolean) => !prev);
 	};
 	return (
-		<button
-			className={
-				menuOpen
-					? `${styles.hamburgerBtn} ${styles.slideIn}`
-					: styles.hamburgerBtn
-			}
+		<HamburgerBtnContainer
+			className={menuOpen ? 'hamburgerBtn slideIn' : 'hamburgerBtn'}
 			aria-live="polite"
 			aria-expanded={menuOpen ? 'true' : 'false'}
 			onClick={handleOpenMenu}
 		>
-			<span aria-hidden="true"></span>
-			<span aria-hidden="true"></span>
-			<span aria-hidden="true"></span>
-		</button>
+			<span aria-hidden="true" className={menuOpen ? 'slide' : ''}></span>
+			<span aria-hidden="true" className={menuOpen ? 'slide none' : ''}></span>
+			<span aria-hidden="true" className={menuOpen ? 'slide' : ''}></span>
+		</HamburgerBtnContainer>
 	);
 }

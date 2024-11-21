@@ -19,7 +19,7 @@
 
 /* 초기화 */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -97,7 +97,7 @@ li {
 }
 
 /* Utilities */
-.display-text {
+/* .display-text {
   display: block;
   font-family: var(--displayFont);
   font-size: clamp(5rem, 10vw, 7rem);
@@ -178,4 +178,4 @@ li {
   .display-text {
     font-size: 4.5rem;
   }
-}
+} */ 

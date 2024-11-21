@@ -20,10 +20,15 @@ export default function SubLayout({ children }: { children: ReactNode }) {
 
 	const originStyle = {
 		marginTop: 0,
+		height: '100vh',
 	};
 
 	const menuStyle = {
-		marginTop: '-130px',
+		marginBottom: '150px',
+	};
+
+	const locationStyle = {
+		marginBottom: '0px',
 	};
 
 	return (
@@ -31,7 +36,15 @@ export default function SubLayout({ children }: { children: ReactNode }) {
 			<Bubbles />
 			{addedToCart && <Notification />}
 			<Header />
-			<main style={currentPath === '/menu' ? menuStyle : originStyle}>
+			<main
+				style={
+					currentPath === '/menu'
+						? menuStyle
+						: currentPath === '/location'
+							? locationStyle
+							: originStyle
+				}
+			>
 				{children}
 			</main>
 			<Footer />

@@ -1,5 +1,5 @@
 // CSS
-import styles from './footer.module.css';
+import { FooterContainer } from '@/styles/common/FooterContainer';
 
 // Images
 import Image from 'next/image';
@@ -18,22 +18,20 @@ export default function Footer() {
 	const currentPath = router.asPath;
 
 	const originStyle = {
-		marginTop: 0,
+		height: '550px',
 	};
 
 	const locationStyle = {
-		marginTop: '-70px',
+		height: '100vh',
 	};
 
 	return (
-		<footer
-			className={styles.footer}
-			id="location"
+		<FooterContainer
 			style={currentPath === '/location' ? locationStyle : originStyle}
 		>
 			<h2 className="display-text">
 				비키니 시티
-				<br className={styles.moblieBreak} /> 위에 떠 있어요!
+				<br className="moblieBreak" /> 위에 떠 있어요!
 			</h2>
 			<address>Bikini Bottom, 11.6065° N, 165.3768° E</address>
 			<a
@@ -46,10 +44,10 @@ export default function Footer() {
 			<p>10am - 9pm</p>
 			<small>&copy; {year} Krusty Krab</small>
 
-			<Image className={styles.seaLeaf} src={SeaLeaf} alt="" />
-			<Image className={styles.coralPurple} src={CoralPurple} alt="" />
-			<Image className={styles.coralOrange} src={CoralOrange} alt="" />
-			<Image className={styles.seaLeaf2} src={SeaLeaf} alt="" />
-		</footer>
+			<Image className="seaLeaf" src={SeaLeaf} alt="" />
+			<Image className="coralPurple" src={CoralPurple} alt="" />
+			<Image className="coralOrange" src={CoralOrange} alt="" />
+			<Image className="seaLeaf2" src={SeaLeaf} alt="" />
+		</FooterContainer>
 	);
 }
