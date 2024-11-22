@@ -1,8 +1,3 @@
-interface MenuItems {
-	name: string;
-	price: string;
-}
-
 export interface CartItem {
 	itemName: string;
 	quantity: number;
@@ -13,4 +8,9 @@ export interface CartState {
 	cartItems: CartItem[];
 	addedToCart: boolean;
 	itemName: string;
+}
+
+export interface MenuItemType {
+	name: string;
+	price: number;
 }

@@ -1,6 +1,5 @@
 // Style
 import { TeamContainer } from '@/styles/team/TeamContainer';
-// import styles from './index.module.css';
 
 // Images
 import Image from 'next/image';

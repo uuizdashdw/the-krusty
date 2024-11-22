@@ -1,5 +1,5 @@
 // CSS
-import styles from './index.module.css';
+import { ErrorContainer } from '@/styles/404/ErrorContainer';
 
 // Type
 import { ReactNode } from 'react';
@@ -22,14 +22,14 @@ export default function ErrorPage() {
 				imageUrl="/share.jpg"
 			/>
 
-			<section className={styles.errorContainer}>
+			<ErrorContainer>
 				<div>
 					<h1>존재하지 않는 페이지입니다!</h1>
-					<Link className={styles.backButton} href={'/'}>
+					<Link className="backButton" href={'/'}>
 						돌아가기
 					</Link>
 				</div>
-			</section>
+			</ErrorContainer>
 		</>
 	);
 }

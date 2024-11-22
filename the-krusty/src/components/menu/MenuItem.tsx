@@ -1,5 +1,4 @@
 // CSS
-// import styles from './menuItem.module.css';
 import { MenuItemContainer } from '@/styles/menu/MenuItemContainer';
 
 // Motion
@@ -8,10 +7,8 @@ import { motion } from 'framer-motion';
 // Component
 import AddToCartBtn from '../button/AddToCartBtn';
 
-interface MenuItemType {
-	name: string;
-	price: number;
-}
+// Types
+import { MenuItemType } from '@/types/types';
 
 export default function MenuItem({ item }: { item: MenuItemType }) {
 	return (

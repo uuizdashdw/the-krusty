@@ -1,6 +1,3 @@
-// CSS
-import styles from './index.module.css';
-
 // Layout
 import SubLayout from '@/components/layout/SubLayout';
 import MetaData from '@/components/meta/MetaData';

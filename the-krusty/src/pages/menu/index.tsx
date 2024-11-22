@@ -1,6 +1,3 @@
-// CSS
-import styles from './index.module.css';
-
 // Component
 import SubLayout from '@/components/layout/SubLayout';
 import Menu from '@/components/menu/Menu';

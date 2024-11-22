@@ -1,5 +1,5 @@
 // CSS
-import styles from './cartlink.module.css';
+import { CartLinkContainer } from '@/styles/cart/CartLinkContainer';
 
 // Hooks
 import { useState, useEffect } from 'react';
@@ -45,17 +45,17 @@ export default function CartLink() {
 	}, [newItemAdded]);
 
 	return (
-		<div className={styles.cartContainer}>
+		<CartLinkContainer>
 			<Link href={'/cart'}>
 				<Image src={Cart} alt="cart" />
 				<small
-					className={styles.numItemsInCart}
+					className="numItemsInCart"
 					style={{ transform: newItemAdded ? 'scale(1.2)' : 'scale(1)' }}
 					aria-hidden="true"
 				>
 					{numItemInCart}
 				</small>
 			</Link>
-		</div>
+		</CartLinkContainer>
 	);
 }

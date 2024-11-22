@@ -1,5 +1,5 @@
 // CSS
-import styles from './employee.module.css';
+import { EmployeeContainer } from '@/styles/employee/EmployeeContainer';
 
 // Image
 import Image from 'next/image';
@@ -11,9 +11,9 @@ import { motion, useReducedMotion } from 'framer-motion';
 export default function Employee() {
 	const reduceMotion = useReducedMotion();
 	return (
-		<section className={styles.employeeContainer}>
+		<EmployeeContainer>
 			<svg
-				className={styles.wavesTop}
+				className="wavesTop"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 24 150 28"
 				preserveAspectRatio="none"
@@ -25,7 +25,7 @@ export default function Employee() {
 						d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
 					/>
 				</defs>
-				<g className={styles.floatTop}>
+				<g className="floatTop">
 					<use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(183,2,2,1)" />
 				</g>
 			</svg>
@@ -34,7 +34,7 @@ export default function Employee() {
 
 			<figure>
 				<motion.div
-					className={styles.leftBurst}
+					className="leftBurst"
 					initial={{ scaleX: 0 }}
 					whileInView={{ scaleX: [0, 1.1, 1], originX: 'right' }}
 					transition={{
@@ -48,7 +48,7 @@ export default function Employee() {
 					<div></div>
 				</motion.div>
 				<motion.div
-					className={styles.rightBurst}
+					className="rightBurst"
 					initial={{ scaleX: 0 }}
 					whileInView={{ scaleX: [0, 1.1, 1], originX: 'left' }}
 					transition={{
@@ -76,7 +76,7 @@ export default function Employee() {
 				<figcaption>네모바지 스폰지밥</figcaption>
 			</figure>
 			<svg
-				className={styles.wavesBottom}
+				className="wavesBottom"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 24 150 28"
 				preserveAspectRatio="none"
@@ -88,10 +88,10 @@ export default function Employee() {
 						d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
 					/>
 				</defs>
-				<g className={styles.floatBottom}>
+				<g className="floatBottom">
 					<use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(183,2,2,1)" />
 				</g>
 			</svg>
-		</section>
+		</EmployeeContainer>
 	);
 }

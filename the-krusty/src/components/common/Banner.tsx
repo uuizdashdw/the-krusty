@@ -1,5 +1,5 @@
 // CSS
-import styles from './banner.module.css';
+import { BannerContainer } from '@/styles/common/BannerContainer';
 
 // Images
 import Image from 'next/image';
@@ -13,20 +13,20 @@ import AddToCartBtn from '../button/AddToCartBtn';
 
 export default function Banner() {
 	return (
-		<section className={styles.banner} id="skip-target">
-			<Image src={Flower1} alt="" className={styles.flower1} priority={true} />
-			<Image className={styles.flower2} src={Flower2} alt="" />
-			<Image className={styles.flower3} src={Flower3} alt="" />
-			<div className={styles.content}>
+		<BannerContainer id="skip-target">
+			<Image src={Flower1} alt="" className="flower1" priority={true} />
+			<Image className="flower2" src={Flower2} alt="" />
+			<Image className="flower3" src={Flower3} alt="" />
+			<div className="content">
 				<Image
 					src={KrabbyPatty}
 					alt="게살버거"
-					className={styles.krabbyPattyImg}
+					className="krabbyPattyImg"
 					priority={true}
 				/>
 				<h1>
 					Home of the world famous{' '}
-					<span className={styles.headingText}>
+					<span className="headingText">
 						<span className="sr-only">집게리아</span>
 					</span>
 				</h1>
@@ -44,6 +44,6 @@ export default function Banner() {
 					Add NOW!
 				</AddToCartBtn>
 			</div>
-		</section>
+		</BannerContainer>
 	);
 }

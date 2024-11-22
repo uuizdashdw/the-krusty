@@ -1,5 +1,5 @@
 // CSS
-import styles from './calltoaction.module.css';
+import { CallToActionConatiner } from '@/styles/callToAction/CallToActionContainer';
 
 // Images
 import Image from 'next/image';
@@ -15,7 +15,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 export default function CallToAction() {
 	const reduceMotion = useReducedMotion();
 	return (
-		<article className={styles.callToAction}>
+		<CallToActionConatiner>
 			<motion.div
 				initial={{ x: reduceMotion ? '0px' : '-175px' }}
 				whileInView={{ x: '0px' }}
@@ -28,6 +28,6 @@ export default function CallToAction() {
 			<AddToCartBtn btnClass="primary-button-sq" name="Coral Bits" price={2000}>
 				<Image src={AddtoCartIcon} alt="카트에 담기" />
 			</AddToCartBtn>
-		</article>
+		</CallToActionConatiner>
 	);
 }

@@ -43,7 +43,6 @@ export default function Menu() {
 
 			<MenuItemsWrapper>
 				<MenuItemsColumns
-					// className={`${styles.menuItems} ${styles.columns}`}
 					variants={raiseIntoView}
 					initial="initial"
 					whileInView="whileInView"
@@ -55,7 +54,6 @@ export default function Menu() {
 				</MenuItemsColumns>
 
 				<MenuItems
-					// className={styles.menuItems}
 					variants={raiseIntoView}
 					initial="initial"
 					whileInView="whileInView"

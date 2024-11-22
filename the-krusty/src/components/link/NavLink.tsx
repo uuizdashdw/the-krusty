@@ -1,6 +1,3 @@
-// CSS
-import styles from './navlink.module.css';
-
 // Link
 import Link from 'next/link';
 

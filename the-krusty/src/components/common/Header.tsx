@@ -1,11 +1,11 @@
 // CSS
-import styles from './header.module.css';
+import { HeaderContainer } from '@/styles/common/HeaderContainer';
 
 // Nav Data
 import Data from '../../data/header.json';
 
 // Hook
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Image
 import Image from 'next/image';
@@ -24,26 +24,26 @@ export default function Header() {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
 	return (
-		<header className={styles.header}>
-			<Image priority={true} src={Light} alt="" className={styles.light} />
+		<HeaderContainer>
+			<Image priority={true} src={Light} alt="" className="light" />
 
-			<nav className={styles.navigation}>
-				<Link href={'#skip-target'} className={styles.skipToContent}>
+			<nav className="navigation">
+				<Link href={'#skip-target'} className="skipToContent">
 					컨텐츠 스킵하기
 				</Link>
 
-				<Link href={'/'} className={styles.logo}>
+				<Link href={'/'} className="logo">
 					<Image
 						src={Logo}
 						alt="게살버거"
 						priority={true}
-						className={styles.logo_img}
+						className="logo_img"
 					/>
 				</Link>
 
 				<HamburgerBtn menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-				<ul className={menuOpen ? styles.slideIn : ''}>
+				<ul className={menuOpen ? 'slideIn' : ''}>
 					{Data.map((item, idx) => (
 						<NavLink
 							link={item.link}
@@ -56,6 +56,6 @@ export default function Header() {
 			</nav>
 
 			<CartLink />
-		</header>
+		</HeaderContainer>
 	);
 }
