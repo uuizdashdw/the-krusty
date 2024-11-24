@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux';
 
 // Hook
 import { useUpdateQuantity } from '@/hooks/useUpdateQuantity';
-import { RootState } from '@/store/store';
 
 export default function CartItem({
 	itemName,

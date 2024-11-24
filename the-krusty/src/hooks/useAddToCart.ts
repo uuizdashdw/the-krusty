@@ -2,28 +2,33 @@
 import { useEffect } from 'react';
 
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { addItemToCart, setAddedToCart, setItemName } from '@/store/cartSlice';
-import { RootState } from '@/store/store';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { addItemToCart, setAddedToCart, setItemName } from '@/store/cartSlice';
+// import { RootState } from '@/store/store';
+
+// Zustand
+import useCartStore from '@/store/store';
 import { CartItem } from '@/types/types';
 
 export function useAddToCart() {
-	const dispatch = useDispatch();
-	const { addedToCart, cartItems } = useSelector(
-		(state: RootState) => state.cart,
-	);
+	const { addedToCart, cartItems, setAddedToCart, addItemToCart, setItemName } =
+		useCartStore();
+	// const dispatch = useDispatch();
+	// const { addedToCart, cartItems } = useSelector(
+	// 	(state: RootState) => state.cart,
+	// );
 
 	useEffect(() => {
 		if (addedToCart) {
 			const timer = setTimeout(() => {
-				dispatch(setAddedToCart(false));
+				setAddedToCart(false);
 			}, 1800);
 
 			return () => {
 				clearTimeout(timer);
 			};
 		}
-	}, [addedToCart, dispatch]);
+	}, [addedToCart, setAddedToCart]);
 
 	const handleAddToCart = (e: React.MouseEvent<HTMLElement>) => {
 		const currentItemName = e.currentTarget.getAttribute('data-name') as string;
@@ -33,15 +38,14 @@ export function useAddToCart() {
 		// const currentQuantity = cartItems.find(
 		// 	item => item.itemName === currentItemName,
 		// )?.quantity as number;
-		const currentQuantity = dispatch(setItemName(currentItemName));
-		dispatch(
-			addItemToCart({
-				itemName: currentItemName,
-				price: currentItemPrice,
-				quantity: 1,
-			}),
-		);
-		dispatch(setAddedToCart(true));
+		const currentQuantity = setItemName(currentItemName);
+
+		addItemToCart({
+			itemName: currentItemName,
+			price: currentItemPrice,
+			quantity: 1,
+		});
+		setAddedToCart(true);
 	};
 
 	return { handleAddToCart };

@@ -1,10 +1,14 @@
 // Redux
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '@/store/store';
+
+import useCartStore from '@/store/store';
 
 export function useHandlePlural() {
-	const { itemName, cartItems } = useSelector((state: RootState) => state.cart);
-	const currentItem = cartItems.find(item => item.itemName === itemName);
+	// const { itemName, cartItems } = useSelector((state: RootState) => state.cart);
+	// const currentItem = cartItems.find(item => item.itemName === itemName);
+	const { itemName, cartItems } = useCartStore();
+	const currentItem = cartItems.find(i => i.itemName === itemName);
 	const numItems = currentItem?.quantity || 0;
 
 	const itemNameHandlePlural = () => {

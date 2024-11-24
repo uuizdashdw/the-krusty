@@ -12,13 +12,16 @@ import Image from 'next/image';
 import Cart from '../../../public/images/cart.svg';
 
 // Redux
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '@/store/store';
+// Zustand
+import useCartStore from '@/store/store';
 
 export default function CartLink() {
 	const [numItemInCart, setNumItemsInCart] = useState(0);
 	const [newItemAdded, setNewItemAdded] = useState(false);
-	const { cartItems } = useSelector((state: RootState) => state.cart);
+	// const { cartItems } = useSelector((state: RootState) => state.cart);
+	const { cartItems } = useCartStore();
 
 	// 카트에 담긴 아이템 수 계산
 	useEffect(() => {

@@ -3,19 +3,16 @@ import styles from './addtocartbtn.module.css';
 
 // Type
 import { ReactNode } from 'react';
-interface AddToCartBtnType {
-	children: ReactNode;
-	btnClass: string;
-	name: string;
-	price: number;
-}
+import { AddToCartBtnType } from '@/types/types';
 
 // Redux
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
+
+// Zustand
+import useCartStore from '@/store/store';
 
 // Hook
 import { useAddToCart } from '@/hooks/useAddToCart';
-import { RootState } from '@/store/store';
 
 export default function AddToCartBtn({
 	children,
@@ -23,7 +20,8 @@ export default function AddToCartBtn({
 	name,
 	price,
 }: AddToCartBtnType) {
-	const { addedToCart } = useSelector((state: RootState) => state.cart);
+	// const { addedToCart } = useSelector((state: RootState) => state.cart);
+	const { addedToCart } = useCartStore();
 	const { handleAddToCart } = useAddToCart();
 	return (
 		<button

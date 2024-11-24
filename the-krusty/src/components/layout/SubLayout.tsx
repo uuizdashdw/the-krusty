@@ -7,14 +7,17 @@ import Notification from '../notification/Notification';
 import Bubbles from '../bubbles/Bubbles';
 
 // Redux
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '@/store/store';
+// Zustand
+import useCartStore from '@/store/store';
 
 // Router
 import { useRouter } from 'next/router';
 
 export default function SubLayout({ children }: { children: ReactNode }) {
-	const { addedToCart } = useSelector((state: RootState) => state.cart);
+	// const { addedToCart } = useSelector((state: RootState) => state.cart);
+	const { addedToCart } = useCartStore();
 	const router = useRouter();
 	const currentPath = router.asPath;
 
